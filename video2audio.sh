@@ -64,3 +64,29 @@ done
 
 # The range is -1 to 10, where 10 is very high quality
 # The default is -qscale:a 3, which corresponds to an average bitrate of about 112
+
+#######################################################################
+# youtube mkv and webm to avi using xvid video container and mp3 audio #
+# works for archos 5                                                  #
+#######################################################################
+
+ffmpeg -i inputfile.webm -vcodec libxvid -b 1000k -acodec libmp3lame -ac 2 -ar 44100 -ab 128k outputfile.avi
+
+
+# if the frame size is too big for archos 5...
+
+# -s for the frame size
+# -q:v 0 to keep the same video quality
+
+ffmpeg -i inputfile.avi -s 720x576 -q:v 0 outputfile.avi
+
+# but this is not to be confused with changing the aspect ratio
+# so if the video is 4:3 the aspect ratio can be changed to 16:9
+
+ffmpeg -i inputfile.avi -vf scale=720:576,setdar=16:9 -q:v 0 outputfile.avi
+
+
+# this works - only having to use 1 command
+# haven't specified a video codec bit rate
+
+ffmpeg -i input.mkv -vcodec libxvid -vf scale=720:576,setdar=16:9 -q:v 0 -acodec libmp3lame -ac 2 -ar 44100 -ab 128k output.avi
