@@ -90,3 +90,35 @@ ffmpeg -i inputfile.avi -vf scale=720:576,setdar=16:9 -q:v 0 outputfile.avi
 # haven't specified a video codec bit rate
 
 ffmpeg -i input.mkv -vcodec libxvid -vf scale=720:576,setdar=16:9 -q:v 0 -acodec libmp3lame -ac 2 -ar 44100 -ab 128k output.avi
+
+##############
+# youtube-dl #
+##############
+
+# downloading video and audio separately
+# merging the video and audio file
+# creates smaller file size than downloading the options of video and audio together
+
+# download high quality video only webm
+# download high quality audio only opus
+
+# mv the webm video to webm.bak
+# run the video2audio_updated.sh script so that the opus audio file (which is .webm) is re-named to opus
+# mv the video file .web.bak to .web
+
+# Make sure that the audiofile and the videofile have the same duration
+
+# Usually the videostream is mapped as first stream in the container
+
+# run this command
+
+ffmpeg -i videofile.webm -i audio.opus -map 0:0 -map 1:0 -vcodec copy -acodec copy videoandaudiofile.webm
+
+# explanation of the options
+# -i videofile       -> first media file
+# -i audiofile.opus  -> second media file
+# -map 0:1      -> use the second stream from the first mediafile
+# -map 1:0      -> use the first stream from the second mediafile
+# -vcodec copy  -> leave the video as is
+# -acodec copy  -> leave the audio as is
+# newvideo      -> resulting videofile
