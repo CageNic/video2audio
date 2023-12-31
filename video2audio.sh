@@ -122,3 +122,13 @@ ffmpeg -i videofile.webm -i audio.opus -map 0:0 -map 1:0 -vcodec copy -acodec co
 # -vcodec copy  -> leave the video as is
 # -acodec copy  -> leave the audio as is
 # newvideo      -> resulting videofile
+
+######################################################
+# concatenate mp4 files ffmpeg filter_complex concat #
+######################################################
+
+# check with ffprobe that the video stream is 0 and the audio stream is 1 (in all input files)
+n = (number of files to concatenate)
+
+ffmpeg -i file1.mp4 -i file2.mp4 -filter_complex "concat=n=2:v=0:a=1" test.mp4
+
