@@ -130,5 +130,15 @@ ffmpeg -i videofile.webm -i audio.opus -map 0:0 -map 1:0 -vcodec copy -acodec co
 # check with ffprobe that the video stream is 0 and the audio stream is 1 (in all input files)
 n = (number of files to concatenate)
 
-ffmpeg -i file1.mp4 -i file2.mp4 -filter_complex "concat=n=2:v=0:a=1" test.mp4
+ffmpeg -i file1.mp4 -i file2.mp4 -filter_complex "[0:v] [0:a]
+[1:v] [1:a]  concat=n=2:v=1:a=1 [v] [a]" -map "[v]" -map "[a]" output.mp4
+
+concat=n=the number of files
+[0:v] [0:a] represents video and audio for first file
+[1:v] [1:a] represents video and audio for second file
+
+If there was a third file it would be; ffmpeg -i file1.mp4 -i file2.mp4 -i file3.mp4 -filter_complex "[0:v] [0:a]
+[1:v] [1:a] [2:v] [2:a]  concat=n=3:v=1:a=1 [v] [a]" -map "[v]" -map "[a]" output.mp4
+
+
 
