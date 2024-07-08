@@ -1,3 +1,6 @@
+# note that there is no re-encoding from mp4 to .ts
+# it's lossless
+# the output file is .mp4 not .ts
 Concat protocol
 While the demuxer works at the stream level, the concat protocol works at the file level. Certain files (MPEG-2 transport streams, possibly others) can be concatenated. This is analogous to using cat on UNIX-like systems or copy on Windows.
 
