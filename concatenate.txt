@@ -1,0 +1,13 @@
+Concat protocol
+While the demuxer works at the stream level, the concat protocol works at the file level. Certain files (MPEG-2 transport streams, possibly others) can be concatenated. This is analogous to using cat on UNIX-like systems or copy on Windows.
+
+Instructions
+The following command concatenates three MPEG-2 TS files and concatenates them without re-encoding:
+
+ffmpeg -i "concat:input1.ts|input2.ts|input3.ts" -c copy output.ts
+Using intermediate files
+If you have MP4 files, these could be losslessly concatenated by first transcoding them to MPEG-2 transport streams. With H.264 video and AAC audio, the following can be used:
+
+ffmpeg -i input1.mp4 -c copy intermediate1.ts
+ffmpeg -i input2.mp4 -c copy intermediate2.ts
+ffmpeg -i "concat:intermediate1.ts|intermediate2.ts" -c copy output.mp4
