@@ -37,6 +37,9 @@ gzip -r a_folder
 The -v option prints the compression percentage information. Here's an
 example of it being used along with the -k (keep) option:
 
+![image](https://github.com/user-attachments/assets/9b68da79-6384-4f7e-a10c-30150a176b58)
+
+
 gzip can also be used to decompress a file, using the -d option:
 
 gzip -d filename.gz
@@ -78,6 +81,9 @@ and to extract them to a specific directory, use:
 tar -xf archive.tar -C directory
 
 You can also just list the files contained in an archive:
+
+![image](https://github.com/user-attachments/assets/b2120e8b-879b-42e1-8910-0e928c6e54cd)
+
 
 tar is often used to create a compressed archive, gzipping the archive.
 This is done using the z option:
