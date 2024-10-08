@@ -1,4 +1,4 @@
-gzip
+## gzip
 You can compress a file using the gzip compression protocol named LZ77
 using the gzip command.
 Here's the simplest usage:
@@ -29,7 +29,6 @@ You can compress multiple files by listing them:
 
 gzip filename1 filename2
 
-26
 You can compress all the files in a directory, recursively, using the -r
 option:
 
@@ -42,8 +41,7 @@ gzip can also be used to decompress a file, using the -d option:
 
 gzip -d filename.gz
 
-27
-gunzip
+## gunzip
 The gunzip command is basically equivalent to the gzip command,
 except the -d option is always enabled by default.
 The command can be invoked in this way:
