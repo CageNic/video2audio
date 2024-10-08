@@ -81,7 +81,7 @@ tar -xf archive.tar -C directory
 
 You can also just list the files contained in an archive:
 
-![image]()
+![image](https://github.com/CageNic/video2audio/blob/master/tar.png)
 
 tar is often used to create a compressed archive, gzipping the archive.
 This is done using the z option:
