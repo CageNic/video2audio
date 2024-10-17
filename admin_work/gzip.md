@@ -37,7 +37,7 @@ gzip -r a_folder
 The -v option prints the compression percentage information. Here's an
 example of it being used along with the -k (keep) option:
 
-![image](https://github.com/CageNic/video2audioadmin_work/blob/master/gzip.png)
+![image](https://github.com/CageNic/video2audio/blob/master/admin_work/gzip.png)
 
 gzip can also be used to decompress a file, using the -d option:
 
