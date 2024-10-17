@@ -37,7 +37,7 @@ gzip -r a_folder
 The -v option prints the compression percentage information. Here's an
 example of it being used along with the -k (keep) option:
 
-![image](https://github.com/CageNic/video2audio/blob/master/gzip.png)
+![image](https://github.com/CageNic/video2audioadmin_work/blob/master/gzip.png)
 
 gzip can also be used to decompress a file, using the -d option:
 
@@ -81,7 +81,7 @@ tar -xf archive.tar -C directory
 
 You can also just list the files contained in an archive:
 
-![image](https://github.com/CageNic/video2audio/blob/master/tar.png)
+![image](https://github.com/CageNic/video2audio/admin_work/blob/master/tar.png)
 
 tar is often used to create a compressed archive, gzipping the archive.
 This is done using the z option:
