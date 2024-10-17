@@ -1,0 +1,67 @@
+ The programs follow the usual GNU command line syntax, with long options starting with two
+       dashes (`-').  A complete list of options are included below.  For a complete description,
+       use the help option.
+
+       -t, --set-title
+
+       -a, --set-album
+
+       -r, --set-artist
+
+       -y, --set-year
+
+       -n, --set-note
+
+       -g, --set-genre
+
+       -G, --set-genre-word
+
+       -c, --set-track=INT
+
+       -h, --help
+
+       -v, --version
+
+       -l, --genre-list
+
+id3tool is yet another command line utility that can help us edit the ID3 tags of an MP3 file. It’s a very lightweight and straightforward tool to use.
+
+Installation
+
+id3tool may not be installed by default. On Ubuntu, we can install it simply:
+
+$ sudo apt install id3tool
+
+The package name and the package manager may be different for other distributions. After installing, let’s run the command with the -h flag to see what it can do:
+
+$ id3tool --help
+id3tool version 1.2a
+...(more output)
+
+The help message prints all the fields that can be edited along with other useful information.
+
+Viewing and Editing ID3 Tags
+
+To view the tags present in an MP3 file, we simply run the id3tool command with the path to the file as a positional argument:
+
+$ id3tool my_music_file.mp3
+Filename: my_music_file.mp3
+Song Title:	My Favorite Song              
+Artist:		My Favorite Artist            
+Album:		My Favorite Album             
+Track:		1
+Year:		2002
+
+To change the tags, we can run the command with the required flags and the corresponding values:
+
+$ id3tool -t "In The End" -a "Hybrid Theory" -r "Linkin Park" -y 2000 -c 8 my_music_file.mp3
+
+$ id3tool my_music_file.mp3
+Filename: my_music_file.mp3
+Song Title:	In The End                    
+Artist:		Linkin Park                   
+Album:		Hybrid Theory                 
+Track:		8
+Year:		2000
+
+In the first command, we used the flags -t, -a, -r, -y, and -c to edit the track title, album name, artist’s name, year, and track number fields respectively. Later, we ran the view command to verify that the change has occurred.
