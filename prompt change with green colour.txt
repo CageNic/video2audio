@@ -1,2 +1,0 @@
-# prompt change with green colour
-PS1='\[\e[32m\]andyc->\[\e[0m\] '
