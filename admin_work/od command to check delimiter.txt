@@ -1,0 +1,30 @@
+#################################################
+# od command to check what delimiter is in file #
+#################################################
+
+od -c file.txt | head
+0000000   t   c   o   n   s   t  \t   t   i   t   l   e   T   y   p   e
+0000020  \t   p   r   i   m   a   r   y   T   i   t   l   e  \t   o   r
+0000040   i   g   i   n   a   l   T   i   t   l   e  \t   i   s   A   d
+0000060   u   l   t  \t   y   e   a   r  \t   e   n   d   Y   e   a   r
+0000100  \t   r   u   n   t   i   m   e  \t   g   e   n   r   e   s  \n
+0000120   t   t   0   0   2   9   2   7   0  \t   t   v   S   h   o   r
+0000140   t  \t   M   u   c   h       A   d   o       A   b   o   u   t
+0000160       N   o   t   h   i   n   g  \t   M   u   c   h       A   d
+0000200   o       A   b   o   u   t       N   o   t   h   i   n   g  \t
+0000220   0  \t   1   9   3   7  \t   \   N  \t   1   0  \t   C   o   m
+
+# the file as seen with cat command
+tconst	titleType	primaryTitle	originalTitle	isAdult	year	endYear	runtime	genres
+tt0029270	tvShort	Much Ado About Nothing	Much Ado About Nothing	0	1937	\N	10	Comedy,Romance,Short
+tt0031458	tvEpisode	El huésped del sevillano	El huésped del sevillano	0	1970	\N	86	Musical
+tt0035599	tvSeries	Voice of Firestone Televues	Voice of Firestone Televues	0	1943	1947	15	\N
+tt0035803	tvSeries	The German Weekly Review	Die Deutsche Wochenschau	0	1940	1945		Documentary,News
+tt0038276	tvSeries	You Are an Artist	You Are an Artist	0	1946	1955	15	Talk-Show
+tt0039120	tvSeries	Americana	Americana	0	1947	1949	30	Family,Game-Show
+tt0039121	tvSeries	Birthday Party	Birthday Party	0	1947	1949	30	Family
+tt0039122	tvSeries	The Borden Show	The Borden Show	0	1947	\N	30	Comedy,Music
+tt0039123	tvSeries	Kraft Theatre	Kraft Television Theatre	0	1947	1958	60	Drama
+
+# the \t from the od command indicates the tab space on the 7th byte - so can determine that this matches the string / delimiter positions from the cat command 
+
